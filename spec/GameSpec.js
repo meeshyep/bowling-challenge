@@ -12,16 +12,18 @@ describe("Game", function() {
       game.nextFrame();
       expect(frame).toHaveBeenCalled();
     });
-    it("should save current frame", function() {
+
+    it("Should save current frame", function() {
       game.nextFrame();
       expect(game.framesHistory).toEqual([frame]);
     });
 
-    describe('adding bonus spare frame', function(){
+    describe('Adding Bonus Spare Frame', function(){
       beforeEach(function() {
         frame.frameResult.and.returnValue('spare');
       });
-      it("should create new bonus spare frame", function(){
+
+      it("Should create new Bonus Spare Frame", function(){
         game.nextFrame();
         game.addScore(5);
         game.addScore(5);
@@ -29,11 +31,12 @@ describe("Game", function() {
       });
     });
 
-    describe('adding bonus strike frame', function(){
+    describe('Adding Bonus Strike Frame', function(){
       beforeEach(function() {
         frame.frameResult.and.returnValue('strike');
       });
-      it("should create new bonus strike frame", function(){
+
+      it("Should create new Bonus Strike Frame", function(){
         game.nextFrame();
         game.addScore(10);
         expect(game._nextFrameType()).toEqual('strike');
@@ -41,7 +44,7 @@ describe("Game", function() {
     });
   });
 
-  describe('adding final frame', function(){
+  describe('Adding Final Frame', function(){
     beforeEach(function() {
       for (var i = 0; i < 9; i++) {
         game.nextFrame();
@@ -49,20 +52,21 @@ describe("Game", function() {
         frame.frameResult.and.returnValue('final');
       }
     });
-    it("should create new bonus spare frame", function(){
+
+    it("Should create new Bonus Spare Frame", function(){
       expect(game._nextFrameType()).toEqual('final');
     });
   });
 
-  describe('Adding scores to frame', function() {
-    it("should add score to new frame", function() {
+  describe('Adding Scores to Frame', function() {
+    it("Should add Score to new Frame", function() {
       game.nextFrame();
       game.addScore(1);
       expect(frame.addScore).toHaveBeenCalled();
     });
   });
 
-  describe('calculating scores for frame', function() {
+  describe('Calculating Scores for Frame', function() {
     it('adds score from frame', function(){
       game.nextFrame();
       game.addScore(1);

@@ -18,18 +18,19 @@ describe ("Frame", function() {
   });
 
   describe('Frame Type', function() {
-    it("Knows the result of the frame - normal", function() {
+    it("Knows the result of the frame", function() {
       frame.addScore(5);
       frame.addScore(1);
       expect(frame.frameResult()).toEqual('frame');
     });
 
-    it("Knows the result of the frame - spare", function() {
+    it("Knows the result of the Frame is a Spare", function() {
       frame.addScore(5);
       frame.addScore(5);
       expect(frame.frameResult()).toEqual('spare');
     });
-    it("Knows the result of the frame - strike", function() {
+
+    it("Knows the result of the Frame is a Strike", function() {
       frame.addScore(10);
       expect(frame.frameResult()).toEqual('strike');
     });
@@ -42,7 +43,7 @@ describe ("Frame", function() {
       expect(frame.calculatedScore()).toEqual(0);
     });
 
-    it("Should return sum of pins", function() {
+    it("Should return the sum of Pins", function() {
       frame.addScore(1);
       frame.addScore(2);
       expect(frame.calculatedScore()).toEqual(3);
@@ -50,12 +51,13 @@ describe ("Frame", function() {
   });
 
   describe('Defending Against Edge Cases', function() {
-    it("should not accept more than two scores", function() {
+    it("Should not accept more than two Scores", function() {
       frame.addScore(5);
       frame.addScore(1);
       expect(function(){frame.addScore(5)}).toThrow(new Error("The Frame is already over"));
     });
-    it("should not accept two scores over 10", function() {
+
+    it("Should not accept two scores over 10", function() {
       frame.addScore(6);
       expect(function(){frame.addScore(7)}).toThrow(new Error("Maximum Frame Score Reached"));
     });
