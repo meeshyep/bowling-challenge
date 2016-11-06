@@ -1,3 +1,5 @@
+/* jshint undef: true, unused: true */
+/* globals Game */
 describe("Game", function() {
 
   beforeEach(function() {
