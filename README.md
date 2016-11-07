@@ -2,6 +2,11 @@
 Bowling Challenge
 =================
 
+Download:
+-git clone git@github.com:meeshyep/bowling-challenge.git
+-cd bowling-challenge
+-open SpecRunner.html
+
 Task:
 -----
 

@@ -1,2 +1,2 @@
-require 'jasmine'
+# require 'jasmine'
 load 'jasmine/tasks/jasmine.rake'

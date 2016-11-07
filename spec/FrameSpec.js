@@ -37,7 +37,7 @@ describe ("Frame", function() {
   });
 
   describe('Calculating the Frame Score', function() {
-    it "Should return 0 on a Gutter Frame", fucntion() {
+    it "Should return 0 on a Gutter Frame", function() {
       frame.addScore(0);
       frame.addScore(0);
       expect(frame.calculatedScore()).toEqual(0);

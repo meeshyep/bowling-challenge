@@ -8,7 +8,7 @@ describe("Game", function() {
   });
 
   describe('Adding frames', function() {
-    it("should create new frame", function() {
+    it("Should create new frame", function() {
       game.nextFrame();
       expect(frame).toHaveBeenCalled();
     });
@@ -48,9 +48,7 @@ describe("Game", function() {
     beforeEach(function() {
       for (var i = 0; i < 9; i++) {
         game.nextFrame();
-
         frame.frameResult.and.returnValue('final');
-      }
     });
 
     it("Should create new Bonus Spare Frame", function(){
